@@ -86,7 +86,7 @@
                             <td>{{ $shoe->brand }}</td>
                             <td>{{ $shoe->size }}</td>
                             <td>{{ $shoe->color }}</td>
-                            <td>${{ $shoe->price }}</td>
+                            <td>₱{{ $shoe->price }}</td>
                             <td>{{ $shoe->stock_quantity }}</td>
                             <td>{{ $shoe->description }}</td>
                             <td>
