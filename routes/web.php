@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User; 
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Admin;
+use App\Http\Controllers\PurchaseController;
 
 Route::get("/", function() {
     return view("welcome");
@@ -49,3 +50,9 @@ Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.de
 Route::get('/shoes/{shoe}/edit', [ShoeController::class,'edit'])->name('shoes.edit');
 Route::put('/shoes/{shoe}', [ShoeController::class,'update'])->name('shoes.update');
 
+Route::get('/purchase/create', [PurchaseController::class, 'create'])->name('purchase.create');
+Route::get("/purchase/{id}", [PurchaseController::class, 'showPurchasePage'])->name('purchase.show');
+Route::post('/purchase/store', [PurchaseController::class, 'store'])->name('purchase.store');
+Route::get('/purchase/success', function () {
+    return view('purchase.success');
+})->name('purchase.success');
