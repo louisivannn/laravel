@@ -18,7 +18,8 @@ class Shoe extends Model
         'color',
         'price',
         'stock_quantity',
-        'description'
+        'description',
+        'image'
     ];
 
 }

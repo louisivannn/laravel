@@ -28,7 +28,7 @@
                         </div>
                         @endif  
 
-                <form action="{{ route('shoes.store') }}" method="POST" class="mb-4">
+                        <form action="{{ route('shoes.store') }}" method="POST" enctype="multipart/form-data" class="mb-4">
                     @csrf
                     <div class="grid grid-cols-2 gap-4">
                         <div>
@@ -41,7 +41,12 @@
                         </div>
                         <div>
                             <label for="size" class="block text-sm font-medium text-gray-700">Size</label>
-                            <input type="text" name="size" id="size"  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+                            <select name="size" id="size" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+                                <option value="">Select Size</option>
+                                @for ($size = 5; $size <= 15; $size += 0.5)
+                                    <option value="{{ $size }}">{{ $size }}</option>
+                                @endfor
+                            </select>
                         </div>
                         <div>
                             <label for="color" class="block text-sm font-medium text-gray-700">Color</label>
@@ -59,6 +64,10 @@
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                             <textarea name="description" id="description"  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm"></textarea>
                         </div>
+                        <div>
+                            <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
+                            <input type="file" name="image" id="image"  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary mt-4">Add Stock</button>
                 </form>
@@ -75,6 +84,7 @@
                             <th scope="col">Price</th>
                             <th scope="col">Stock Quantity</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -89,6 +99,13 @@
                             <td>₱{{ $shoe->price }}</td>
                             <td>{{ $shoe->stock_quantity }}</td>
                             <td>{{ $shoe->description }}</td>
+                            <td>
+                                @if ($shoe->image)
+                                    <img src="{{ asset('storage/' . $shoe->image) }}" alt="{{ $shoe->name }}" class="w-20 h-20 object-cover">
+                                    @else
+                                    No Image
+                                    @endif
+                            </td>
                             <td>
                         <a href="{{route('shoes.edit', $shoe->id)}}" class="btn btn-sm btn-warning">
                             <i class="fas fa-edit"></i> 
