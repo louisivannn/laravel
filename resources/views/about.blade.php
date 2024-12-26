@@ -177,26 +177,20 @@
                         <h2>Meet the Team</h2>
                         <div class="row justify-content-center">
                             <div class="col-md-4 team-member">
-                                <img src="{{asset('images/dref.jpg')}}" alt="John Drayfner">
-                                <h4>John Drayfner</h4>
+                                <img src="{{asset('images/ej.jpg')}}" alt="Elpidio James">
+                                <h4>Elpidio James</h4>
                                 <p>CEO</p>
                             </div>
 
                             <div class="col-md-4 team-member">
-                                <img src="{{asset('images/evander.jpg')}}" alt="Ivander Villanueva">
-                                <h4>Ivander Villanueva</h4>
+                                <img src="{{asset('images/josh.jpg')}}" alt="Josh Riles">
+                                <h4>Josh Riles</h4>
                                 <p>Developer</p>
                             </div>
 
                             <div class="col-md-4 team-member">
-                                <img src="{{asset('images/zyke.jpg')}}" alt="Zeke Victoria">
-                                <h4>Zeke Victoria</h4>
-                                <p>Developer</p>
-                            </div>
-
-                            <div class="col-md-4 team-member">
-                                <img src="{{asset('images/mark.jpg')}}" alt="Marky Alicante">
-                                <h4>Marky Alicante</h4>
+                                <img src="{{asset('images/ez.jpg')}}" alt="Ezrah Agustin">
+                                <h4>Ezrah Agustin</h4>
                                 <p>Developer</p>
                             </div>
 
